@@ -561,6 +561,7 @@ impl fmt::Debug for Uuid {
 }
 
 impl fmt::Display for Uuid {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         fmt::LowerHex::fmt(self, f)
     }
@@ -578,6 +579,7 @@ impl fmt::Display for Variant {
 }
 
 impl fmt::LowerHex for Uuid {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         fmt::LowerHex::fmt(&self.to_hyphenated_ref(), f)
     }
